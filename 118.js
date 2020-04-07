@@ -4,7 +4,7 @@
  */
 var generate = function(numRows) {
   let arr=[];
-  for(let i =0;i<numRows;i++){
+  for(let i =0;i<=numRows;i++){
     let nums =[]
       for(let j=0;j<i+1;j++){
           if(j==0 || j==i) nums.push(1);
@@ -15,4 +15,4 @@ var generate = function(numRows) {
   console.log(arr);
 };
 
-generate(7);
+generate(3);
