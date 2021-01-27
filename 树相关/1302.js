@@ -29,3 +29,5 @@ var deepestLeavesSum = function (root) {
   }
   return arr[arr.length-1].reduce((pre,next) => pre+next,0)
 };
+
+// 深度优先
