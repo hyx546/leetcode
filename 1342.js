@@ -12,3 +12,9 @@ var numberOfSteps = function (num) {
   test(num)
   return count
 };
+
+
+var numberOfSteps = function (num) {
+  let str = num.toString(2);
+  return str.length + str.replace(/0/g,"").length-1;
+};
