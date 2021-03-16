@@ -13,7 +13,8 @@ const devide = (arr,start,end) => {
     }
     while (arr[r] >base) {
       r--;
-    }if(l<=r){
+    }
+    if(l<=r){
       [arr[l],arr[r]]=[arr[r],arr[l]];
       l++;
       r--;
