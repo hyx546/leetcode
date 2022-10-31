@@ -25,8 +25,9 @@ var letterCasePermutation = function (s) {
     };
 
     const dns = (start, n, cur) => {
+        console.log('cur', cur);
         if (start === n) {
-            res.push(cur.slice());
+            res.push(cur);
             return;
         }
 
