@@ -1,16 +1,9 @@
-const list = [1, 2, 3];
-const square = num => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(num * num);
-        }, 1000);
-    });
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var canJump = function (nums) {
+    let 
 };
 
-async function test() {
-    for (let i = 0; i < list.length; i++) {
-        const res = await square(list[i]);
-        console.log(res);
-    }
-}
-test();
+console.log(canJump(nums = [2, 3, 1, 1, 4]));
