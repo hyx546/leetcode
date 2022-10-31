@@ -1,12 +1,9 @@
 function quickSort(arr) {
     if (arr.length <= 1) return arr;
-    const baseIndex = Math.floor(Math.length / 2);
-
-    const baseValue = arr.splice(baseIndex, 1)[0];
     const left = [], right = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < baseValue) {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < arr[0]) {
             left.push(arr[i]);
         }
         else {
@@ -14,7 +11,7 @@ function quickSort(arr) {
         }
     };
 
-    return quickSort(left).concat(baseValue, quickSort(right));
+    return quickSort(left).concat(arr[0], quickSort(right));
 }
 
 console.log(quickSort(arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]));
