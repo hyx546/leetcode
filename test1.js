@@ -1,25 +1,23 @@
-/**
- * @param {string} s
- * @param {string} t
- * @return {string}
- */
-var minWindow = function (s, t) {
-    let minIndex = 0, minStr = '';
 
-    let left = 0;
-    for (let i = t.length - 1; i >t.length; i--) {
-        if ()
-        
-    }
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+}
+/**
+ * @param {number[]} preorder
+ * @param {number[]} inorder
+ * @return {TreeNode}
+ */
+var buildTree = function (preorder, inorder) {
+    if (!preorder.length || !inorder.length) return null;
+    const node = preorder.shift();
+    console.log(node, inorder);
+    const index = inorder.findIndex((val) => val === node);
+    const root = new TreeNode(node);
+    root.left = buildTree(preorder, inorder.slice(0, index));
+    root.right = buildTree(preorder, inorder.slice(index + 1));
+    return root;
 };
 
-
-function arrInclude(s1, s2) {
-    const a1 = s1.split('').sort((a, b) => a - b).join('');
-    const a2 = s2.split('').sort((a, b) => a - b).join('');
-    return a1.includes(a2);
-}
-console.log(minWindow(s = "ADOBECODEBANC", t = "ABC"));
-
-
-
+console.log(buildTree(preorder = [3, 9, 20, 15, 7], inorder = [9, 3, 15, 20, 7]));
